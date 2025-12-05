@@ -1,14 +1,17 @@
 import java.util.List;
 import java.util.ArrayList;
 class TCalc {
-    private List<String> names = new ArrayList<>();
-    private int tPercentage = 0;
-    public List<String> addPerson(List<String> names, String name) {
-    	List<String> updated = new ArrayList<>(names);
-	updated.add(name);
-	return updated;
-    }
+	private List<String> names = new ArrayList<>();
+	private int tPercentage = 0;
+	public List<String> addPerson(List<String> names, String name) {
+    		List<String> updated = new ArrayList<>(names);
+		updated.add(name);
+		return updated;
+
+    	}
 /*
+
+
     public void addPerson(String name) {
 	names.add(name);
 	if(names.size() > 5) {
@@ -18,17 +21,14 @@ class TCalc {
 		tPercentage = 10;
 	}
     }
-   
 */    
-public List<String> getNames() {
+	public List<String> getNames() {
         	return new ArrayList<>(names);
-
-}
-public int getTPercentage() {
+	}
+	public int getTPercentage() {
     		return tPercentage;
 	}
-
-public int getTPercentage(List<String> names) {
+	public int getTPercentage(List<String> names) {
     		if(names.size() > 5) {
 			return 20;
 		}
@@ -37,10 +37,7 @@ public int getTPercentage(List<String> names) {
 		}
 		return 0;
     	}
-
 }
-
-
 class pf004_r {
 	static public void main(String args[]){
 		TCalc list1 = new TCalc();
@@ -50,8 +47,19 @@ class pf004_r {
 		List<String> l2 = l1;
 		l2 = list1.addPerson(l2, "Eugene");
 		System.out.println("Tip size for l2: " + list1.getTPercentage(l2));
-
 	}
-
-
 }
+List<String> l3 = new ArrayList<>();
+TCalc list2 = new TCalc();
+list2.getTPercentage(l3) == 0;
+l3.add("alice")
+l3.add("bob")
+l3.add("charlie")
+list2.getTPercentage(l3) == 0;
+list2.getTPercentage(l3) == 10;
+l3.add("david")
+l3.add("eugene")
+l3.add("franklin")
+list2.getTPercentage(l3) == 0;
+list2.getTPercentage(l3) == 10;
+list2.getTPercentage(l3) == 20;
